@@ -1,10 +1,48 @@
-def print_upper_words(words, must_start_with={'e'}):
-    """ Convert words that start with the letter 'e' (default)
-    accepts a Dict with letters and returns Upper case words that only
-    have the letters specified in the Dict on a seperate line
-    ----> print_upper_words(['hi', 'yo', 'everyone'], {'h','e'})
+print('\n**********************************')
+
+
+def print_upper_words(words):
+    """ Prints words in upper case on a seperate line
+    expample ['hi','people'] ---->>>>
     HI
-    EVERYONE
+    PEOPLE
+    """
+    for word in words:
+        print(word.upper())
+
+
+print_upper_words(['hello', 'world', 'loving', 'python'])
+print('\n**********************************')
+
+
+def print_upper_words_starting_with_e(words):
+    """ prints words that start with the letter 'e'
+    upper cased and on a seperate line
+    example ['elephant', 'eats', 'elfs', 'and', 'people']
+
+    ELEPHANT
+    EATS
+    ELFS
+    """
+    for word in words:
+        if word[0] == 'e':
+            print(word.upper())
+
+
+print_upper_words_starting_with_e(
+    ['elephant', 'eats', 'elfs', 'and', 'people'])
+print('\n**********************************')
+
+
+def print_upper_words_that_match_dict(words, must_start_with):
+    """ prints words that start with the keys in dict,
+    upper cased and on a seperate line.
+    example ['elephant', 'eats', 'elfs', 'and', 'people']
+
+    ELEPHANT
+    EATS
+    ELFS
+    PEOPLE
     """
     for words in words:  # loop words list
         for char in must_start_with:  # loop must_start_with keys
@@ -12,6 +50,6 @@ def print_upper_words(words, must_start_with={'e'}):
                 print(words.upper())
 
 
-print_upper_words(['hello', 'world', 'everyone',
-                   'loves', 'python'], {'h', 'w'})
-print_upper_words(['hello', 'world', 'everyone', 'eats', 'elfs'])
+print_upper_words_that_match_dict(
+    ['elephant', 'eats', 'elfs', 'and', 'people'], {'e', 'p'})
+print('\n**********************************')
