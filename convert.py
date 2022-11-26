@@ -6,6 +6,10 @@ def convert_temp(unit_in, unit_out, temp):
     - temp: temperature (in f or c, depending on unit_in)
 
     Return results of conversion, if any.
+    For example:
+
+    convert_temp("c", "f", 0)  =>  32.0
+    convert_temp("f", "c", 212) => 100.0
     """
     # if the units are identical return the temperature
     if unit_in == unit_out:
